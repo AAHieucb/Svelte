@@ -1,0 +1,31 @@
+Svelte
+
+Full tut master: https://learn.svelte.dev/tutorial/welcome-to-svelte
+
+
+# Basic
+-> Setup:
+npm init svelte 
+
+-> Dynamic attribute
+
+-> Styling: 
+Thuộc tính <style> chỉ áp dụng với các thẻ trong cùng file. Mỗi file là 1 phạm vi components.
+
+-> In {@htlm string} chú ý có thể bị XSS nếu string được người dùng nhập vì string được exec như code html 
+
+-> Tính reactivity:
+- Svelte chỉ tự update DOM theo sự thay đổi của biến, nhưng nếu 1 biến được computed thủ công từ biến khác sẽ k tự update mà phải dùng reactive declaration $. Reactive statement sẽ rerun nếu biến ref bên trong thay đổi, nó chạy sau khi exec script code nhưng trước khi component render lần mới. 
+- Với array, object thì phải gán assignment mới thay đổi rerender
+
+-> Condition:
+{#each colors as color (color.id), i}
+{/each}
+=> Logic phức tạp https://learn.svelte.dev/tutorial/keyed-each-blocks Tức là ta remove ptu đầu, nhg nó sẽ remove phần tử cuối rồi update các phần tử còn lại cho giống như là remove phần tử đầu tiên. Update trường name và <Thing/> có name đổi nhưng emojis không dùng reactivity nên k tự update theo là sai. Vì ta k xđ id thì k định rõ các phần tử cụ thể. Tốt nhất là thêm id vào để remove ptu nào là đúng phần tử đó luôn vì xác định duy nhất nó.
+
+{#await promiseFunction}
+{:then number}
+{/await}
+=> promiseFunction mà được gán = 10 functions khác nhau liên tục thì nó chỉ lấy func cuối, k lo race condition.
+
+

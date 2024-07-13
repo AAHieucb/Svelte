@@ -1,0 +1,5 @@
+-> Svelte là 1 component framework tập trung vào việc xây giao diện. Nó khác các framework như React hay Vue ở chỗ nó thực hiện hầu hết ở build time, chuyển code thành JS mà không cần runtime chạy code bổ sung ở phía client, nên nhanh hơn.
+
+-> SvelteKit là 1 app framework để xây dựng full ứng dụng web với Svelte. Nó cung cấp môi trường phát triển tích hợp để xây UI cho Svelte, hỗ trợ SSR và CSR. 
+Nói chung là tạo ra 1 Svelte website lớn thì phải dùng qua SvelteKit, nó hỗ trợ sẵn tối ưu các tính năng như routing, prefetch, module loading khiến cho việc tạo Svelte website dễ dàng hơn là dùng thuần Svelte.
+
